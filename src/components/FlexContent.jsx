@@ -9,7 +9,9 @@ const FlexContent = ({ endpoint: { title, heading, text, img, btn, url } }) => {
           <h1>{title}</h1>
           <p>{text}</p>
           <a href="">
-            <button type="button" className="">{btn}</button>
+            <button type="button" className="">
+              {btn}
+            </button>
           </a>
         </div>
         <div></div>

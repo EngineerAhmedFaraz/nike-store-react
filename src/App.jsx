@@ -10,7 +10,7 @@ import {
 
 const App = () => {
   return (
-    <>
+    <>git 
       <main className="flex flex-col gap-16 relative">
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
