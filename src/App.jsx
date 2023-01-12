@@ -10,8 +10,8 @@ import {
 
 const App = () => {
   return (
-    <>git 
-      <main className="flex flex-col gap-16 relative">
+    <>
+      <main className="flex flex-col hidden gap-16 relative">
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
         <FlexContent endpoint={highlight} />
