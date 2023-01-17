@@ -23,6 +23,14 @@ const Item = ({
     Dispatch(setAddItemToCart(item));
   };
 
+  const onCartToggle = () => {
+    Dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    );
+  };
+
   return (
     <>
       <div
@@ -62,6 +70,11 @@ const Item = ({
             </button>
             <button
               type="button"
+              // Double Function Work here...
+              onClick={() => {
+                onAddtoCart();
+                onCartToggle();
+              }}
               className="bg-white/90 blur-effect-theme button-theme px-2 py-1 shadow shadow-sky-200 text-sm"
             >
               {btn}

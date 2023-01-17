@@ -2,7 +2,7 @@ import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import emptybag from "../../assets/emptybag.png";
 import React from "react";
 
-const CartEmpty = () => {
+const CartEmpty = ({ onCartToggle }) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center h-screen px-11 text-center gap-7">
@@ -13,6 +13,7 @@ const CartEmpty = () => {
         />
         <button
           type="button"
+          onClick={onCartToggle}
           className="button-theme bg-gradient-to-b from-amber-500 to-orange-500 shadow-lg shadow-orange-500 flex justify-center items-center text-slate-900 py-2 gap-3 text-sm px-5 font-semibold active:scale-110"
         >
           <ArrowLeftIcon className="w-5 h-5 text-slate-900" />

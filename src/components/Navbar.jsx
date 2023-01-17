@@ -7,7 +7,7 @@ import {
   ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.png";
-import { setOpenCart } from "../app/CartSlice";
+import { selectTotalQTY, setOpenCart } from "../app/CartSlice";
 
 // Navbar Functionality with scrollbar
 const Navbar = () => {
@@ -15,6 +15,9 @@ const Navbar = () => {
 
   // Use of useDispatch Method
   const dispatch = useDispatch();
+
+  const totalQTY = useSelector(selectTotalQTY);
+
   // One More Toggle Button
   const onCartToggle = () => {
     dispatch(
@@ -84,7 +87,7 @@ const Navbar = () => {
                       : "bg-slate-100 text-slate-900 shadow-slate-900"
                   }`}
                 >
-                  0
+                  {totalQTY}
                 </div>
               </button>
             </li>
