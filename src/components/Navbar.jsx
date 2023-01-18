@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // Now we'll use redux toolkit
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   HeartIcon,
   MagnifyingGlassIcon,
@@ -84,7 +84,7 @@ const Navbar = () => {
                   className={`absolute top-4 right-0 shadow w-4 h-4 text-[0.65rem] leading-light font-medium rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 ${
                     navState
                       ? "bg-slate-900 text-slate-100 shadow-slate-900"
-                      : "bg-slate-100 text-slate-900 shadow-slate-900"
+                      : "bg-slate-100 text-slate-900 shadow-slate-100"
                   }`}
                 >
                   {totalQTY}

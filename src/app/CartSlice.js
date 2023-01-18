@@ -7,9 +7,10 @@ const initialState = {
   // cartItems: [],
   cartItems: localStorage.getItem("cart")
     ? JSON.parse(localStorage.getItem("cart"))
-    : [], //Let Suppose Database
+    : [],
+  //Let Suppose Database
 
-  cartTotalAmont: 0,
+  cartTotalAmount: 0,
   cartTotalQuantity: 0,
 };
 
@@ -96,7 +97,8 @@ const CartSlice = createSlice({
           const { price, cartQuantity } = cartItem;
           const totalPrice = price * cartQuantity;
 
-          cartTotal.TotalAmont += totalPrice;
+          cartTotal.totalAmount += totalPrice; // Confusing Point because don't return value of multiple Addition
+
           cartTotal.totalQTY += cartQuantity;
 
           return cartTotal;
@@ -106,7 +108,7 @@ const CartSlice = createSlice({
           totalQTY: 0,
         }
       );
-      state.cartTotalAmont = totalAmount;
+      state.cartTotalAmount = totalAmount;
       state.cartTotalQuantity = totalQTY;
     },
   },
@@ -124,7 +126,7 @@ export const {
 } = CartSlice.actions;
 export const selectCartState = (state) => state.cart.cartState;
 export const selectCartItems = (state) => state.cart.cartItems;
-export const selectTotalAmount = (state) => state.cart.cartTotalAmont;
+export const selectTotalAmount = (state) => state.cart.cartTotalAmount;
 export const selectTotalQTY = (state) => state.cart.cartTotalQuantity;
 
 export default CartSlice.reducer;
